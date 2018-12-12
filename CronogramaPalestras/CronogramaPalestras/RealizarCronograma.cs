@@ -13,70 +13,88 @@ namespace CronogramaPalestras
 
 		IEnumerable<Palestra> Palestras { get; set; }
 
-		public string Cronograma(List<Palestra> palestras)
+		public static void Cronograma(List<Palestra> palestras, ref string cronograma1, ref string cronograma2)
 		{
+			StringBuilder trilha1 = new StringBuilder();
+			StringBuilder trilha2 = new StringBuilder();
+			DateTime horaTrilha = new DateTime(2018, 12, 12, 9, 0, 0);
+
 			Palestra[] aux = new Palestra[100];
 			palestras.CopyTo(aux);
 			List<Palestra> listAux = aux.ToList();
 			listAux.RemoveAll(x => x == null);
 
-			var testeTempoAntesAlmoco = OterCombinacoes(listAux, TempoAntesAlmoco, string.Empty).ToList()[0];
+			#region Trilha 1
+			var trilha1AntesAlmoco = OterCombinacoes(listAux, TempoAntesAlmoco, string.Empty).ToList()[0];
+			RemoverItensLista(ref listAux, trilha1AntesAlmoco);
+			
+			var trilha1AposAlmoco = OterCombinacoes(listAux, TempoAposAlmoco, string.Empty).ToList()[0];
+			RemoverItensLista(ref listAux, trilha1AposAlmoco);
 
-			foreach (var item in testeTempoAntesAlmoco.Split(';'))
-				listAux.RemoveAll(x => x.Nome.Equals(item, StringComparison.InvariantCultureIgnoreCase));
+			trilha1 = MontaCronograma(palestras, horaTrilha, trilha1AntesAlmoco.Split(';'), trilha1AposAlmoco.Split(';'));
+			#endregion
 
-			var testeTempoAposAlmoco = OterCombinacoes(listAux, TempoAposAlmoco, string.Empty);
+			#region Trilha 2
+			var trilha2AntesAlmoco = OterCombinacoes(listAux, TempoAntesAlmoco, string.Empty).ToList()[0];
+			RemoverItensLista(ref listAux, trilha2AntesAlmoco);
 
-			/*
-			for (int i = 0; i < palestras.Count; i++)
+			var trilha2AposAlmoco = OterCombinacoes(listAux, TempoAposAlmoco, string.Empty).ToList()[0];
+			RemoverItensLista(ref listAux, trilha2AposAlmoco);
+
+			trilha2 = MontaCronograma(palestras, horaTrilha, trilha2AntesAlmoco.Split(';'), trilha2AposAlmoco.Split(';'));
+			#endregion
+
+			cronograma1 = trilha1.ToString();
+			cronograma2 = trilha2.ToString();
+		}
+
+		public static void RemoverItensLista(ref List<Palestra> listaPalestras, string palestras)
+		{
+			foreach (var item in palestras.Split(';'))
+				listaPalestras.RemoveAll(x => x.Nome.Equals(item, StringComparison.InvariantCultureIgnoreCase));
+		}
+
+		public static StringBuilder MontaCronograma(List<Palestra> palestras, DateTime horaTrilha, string[] palestrasAntesAlmoco, string[] palestrasDepoisAlmoco)
+		{
+			StringBuilder trilha = new StringBuilder();
+
+			foreach (var palestra in palestras)
 			{
-				listAux = palestras.Where(x => x.Duracao == palestras[i].Duracao).ToList();
-
-				int quantAux = Convert.ToInt16(listAux.Count() / 2);
-
-				for (int ii = 0; ii < listAux.Count(); ii++)
+				if (horaTrilha.Hour < 12)
 				{
-					if (ii < quantAux)
-						diaUm.Add(listAux[ii]);
-					else
-						diaDois.Add(listAux[ii]);
+					foreach (var item in palestrasAntesAlmoco)
+					{
+						if (palestra.Nome.Equals(item, StringComparison.InvariantCultureIgnoreCase))
+						{
+							trilha.AppendLine($"{horaTrilha.ToShortTimeString()} - {palestra.Nome} {palestra.Duracao}min");
+							horaTrilha = horaTrilha.AddMinutes(palestra.Duracao);
+						}
+					}
 				}
-				i += listAux.Count();
+				else
+				{
+					if (!trilha.ToString().Contains("Almoço"))
+					{
+						trilha.AppendLine($"{horaTrilha.ToShortTimeString()} - Almoço");
+						horaTrilha = horaTrilha.AddHours(1);
+					}
+					foreach (var item in palestrasDepoisAlmoco)
+					{
+						if (palestra.Nome.Equals(item, StringComparison.InvariantCultureIgnoreCase))
+						{
+							trilha.AppendLine($"{horaTrilha.ToShortTimeString()} - {palestra.Nome} {palestra.Duracao}min");
+							horaTrilha = horaTrilha.AddMinutes(palestra.Duracao);
+						}
+					}
+				}
 			}
+			trilha.AppendLine($"{horaTrilha.ToShortTimeString()} - Evento de Networking");
 
-			// ---------------------------------------------------------------------------------
-
-			List<int> posicoes = new List<int>();
-
-			for (int i = 0; i < palestras.Count; i++)
-			{
-				listAux = palestras.Where(x => x.Duracao == palestras[i].Duracao).ToList();
-				int duracao = 0;
-
-				duracao += listAux.First().Duracao;
-				if (duracao == TempoAntesAlmoco)
-				{
-
-				}
-				else if (duracao < TempoAntesAlmoco)
-				{
-
-				}
-				else if (duracao > TempoAntesAlmoco)
-				{
-
-				}
-
-				i += listAux.Count();
-			}
-			*/
-
-			return string.Empty;
+			return trilha;
 		}
 
 
-
-		public IEnumerable<string> OterCombinacoes(List<Palestra> dados, decimal tempoTotal, string values)
+		public static IEnumerable<string> OterCombinacoes(List<Palestra> dados, decimal tempoTotal, string values)
 		{
 			for (int i = 0; i < dados.Count; i++)
 			{

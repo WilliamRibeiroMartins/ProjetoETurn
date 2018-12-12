@@ -41,7 +41,7 @@
 			this.groupBox1.Controls.Add(this.txtTrilhaUm);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(321, 393);
+			this.groupBox1.Size = new System.Drawing.Size(321, 227);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Trilha 1";
@@ -52,7 +52,7 @@
 			this.txtTrilhaUm.Multiline = true;
 			this.txtTrilhaUm.Name = "txtTrilhaUm";
 			this.txtTrilhaUm.ReadOnly = true;
-			this.txtTrilhaUm.Size = new System.Drawing.Size(309, 368);
+			this.txtTrilhaUm.Size = new System.Drawing.Size(309, 192);
 			this.txtTrilhaUm.TabIndex = 0;
 			// 
 			// groupBox2
@@ -60,7 +60,7 @@
 			this.groupBox2.Controls.Add(this.txtTrilhaDois);
 			this.groupBox2.Location = new System.Drawing.Point(339, 12);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(321, 393);
+			this.groupBox2.Size = new System.Drawing.Size(321, 227);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Trilha 2";
@@ -71,14 +71,14 @@
 			this.txtTrilhaDois.Multiline = true;
 			this.txtTrilhaDois.Name = "txtTrilhaDois";
 			this.txtTrilhaDois.ReadOnly = true;
-			this.txtTrilhaDois.Size = new System.Drawing.Size(309, 368);
+			this.txtTrilhaDois.Size = new System.Drawing.Size(309, 192);
 			this.txtTrilhaDois.TabIndex = 0;
 			// 
 			// FormCronograma
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(672, 417);
+			this.ClientSize = new System.Drawing.Size(672, 250);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

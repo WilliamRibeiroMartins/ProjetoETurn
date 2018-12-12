@@ -30,8 +30,13 @@ namespace CronogramaPalestras
 									new Palestra(x.Split(';')[0], Convert.ToInt16(x.Split(';')[1]))
 			));
 
-			var teste = new RealizarCronograma();
-			teste.Cronograma(listaPalestras.OrderByDescending(x => x.Duracao).ToList());
+			string cronograma1 = string.Empty;
+			string cronograma2 = string.Empty;
+
+			RealizarCronograma.Cronograma(listaPalestras, ref cronograma1, ref cronograma2);
+
+			txtTrilhaUm.Text = cronograma1;
+			txtTrilhaDois.Text = cronograma2;
 		}
 	}
 }
