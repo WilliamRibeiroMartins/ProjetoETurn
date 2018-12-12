@@ -1,0 +1,11 @@
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\Palestras.txt
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\CronogramaPalestras.exe.config
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\CronogramaPalestras.exe
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\CronogramaPalestras.pdb
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.csprojResolveAssemblyReference.cache
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.FormCronograma.resources
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.Properties.Resources.resources
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.csproj.GenerateResource.cache
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.csproj.CoreCompileInputs.cache
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.exe
+C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.pdb

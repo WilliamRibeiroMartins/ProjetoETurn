@@ -1,0 +1,19 @@
+Escrevendo testes rápidos;60min
+Uma visão sobre Python;45min
+Angular;30min
+Otimizando aplicações com o NodeJS;45min
+Erros comuns no desenvolvimento de software;45min
+Rails para Desenvolvedores Python;60min
+ASP.net MVC;60min
+TDD na prática;45min
+Woah;30min
+Sente e escreva;30min
+Pair Programming vs Noise;45min
+Mobilidade em desenvolvimento;60min
+Ruby on Rails: Por que devemos migrar para ele?;60min
+Otimizando aplicações .NET;45min
+Java e os novos paradigmas de programação;30min
+Rubi vs. Clojure para Back-End;30min
+Scrum para leigos;60min
+Um mundo sem stackoverflow;30min
+UX;30min
