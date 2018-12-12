@@ -15,12 +15,17 @@ namespace CronogramaPalestras
 
 		public string Cronograma(List<Palestra> palestras)
 		{
-			var diaUm = new List<Palestra>();
-			var diaDois = new List<Palestra>();
-			List<Palestra> listAux;
+			Palestra[] aux = new Palestra[100];
+			palestras.CopyTo(aux);
+			List<Palestra> listAux = aux.ToList();
+			listAux.RemoveAll(x => x == null);
 
-			var testeTempoAntesAlmoco = OterCombinacoes(palestras, TempoAntesAlmoco, string.Empty);
-			var testeTempoAposAlmoco = OterCombinacoes(palestras, TempoAposAlmoco, string.Empty);
+			var testeTempoAntesAlmoco = OterCombinacoes(listAux, TempoAntesAlmoco, string.Empty).ToList()[0];
+
+			foreach (var item in testeTempoAntesAlmoco.Split(';'))
+				listAux.RemoveAll(x => x.Nome.Equals(item, StringComparison.InvariantCultureIgnoreCase));
+
+			var testeTempoAposAlmoco = OterCombinacoes(listAux, TempoAposAlmoco, string.Empty);
 
 			/*
 			for (int i = 0; i < palestras.Count; i++)
@@ -76,7 +81,7 @@ namespace CronogramaPalestras
 			for (int i = 0; i < dados.Count; i++)
 			{
 				decimal resto = tempoTotal - dados[i].Duracao;
-				string vals = dados[i].Nome + "," + values;
+				string vals = dados[i].Nome + ";" + values;
 
 				if (resto == 0)
 				{
