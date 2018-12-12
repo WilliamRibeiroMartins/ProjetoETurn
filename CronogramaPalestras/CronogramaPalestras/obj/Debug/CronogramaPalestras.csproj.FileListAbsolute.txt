@@ -9,3 +9,14 @@ C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\Cr
 C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.exe
 C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.pdb
 C:\Git\William\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.csprojResolveAssemblyReference.cache
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\Palestras.txt
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\CronogramaPalestras.exe.config
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\CronogramaPalestras.exe
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\bin\Debug\CronogramaPalestras.pdb
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.FormCronograma.resources
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.Properties.Resources.resources
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.csproj.GenerateResource.cache
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.csproj.CoreCompileInputs.cache
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.exe
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.pdb
+C:\Users\willi\Documents\GitHub\ProjetoETurn\CronogramaPalestras\CronogramaPalestras\obj\Debug\CronogramaPalestras.csprojAssemblyReference.cache
