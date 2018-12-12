@@ -12,25 +12,26 @@ using System.IO;
 
 namespace CronogramaPalestras
 {
-    public partial class FormCronograma : Form
-    {
-        private readonly string arq = $@"{Environment.CurrentDirectory}/Palestras.txt";
+	public partial class FormCronograma : Form
+	{
+		private readonly string arq = $@"{Environment.CurrentDirectory}/Palestras.txt";
 
-        List<Palestra> listaPalestras = new List<Palestra>();
+		List<Palestra> listaPalestras = new List<Palestra>();
 
-        public FormCronograma()
-        {
-            InitializeComponent();
-        }
+		public FormCronograma()
+		{
+			InitializeComponent();
+		}
 
-        private void FormCronograma_Load(object sender, EventArgs e)
-        {
-            File.ReadAllLines(arq).ToList().ForEach(x => 
-                    listaPalestras.Add(
-                        new Palestra(x.Split(';')[0], Convert.ToInt16(x.Split(';')[1]))
-            ));
+		private void FormCronograma_Load(object sender, EventArgs e)
+		{
+			File.ReadAllLines(arq).ToList().ForEach(x =>
+							listaPalestras.Add(
+									new Palestra(x.Split(';')[0], Convert.ToInt16(x.Split(';')[1]))
+			));
 
-            RealizarCronograma.Cronograma(listaPalestras.OrderByDescending(x => x.Duracao).ToList());
-        }
-    }
+			var teste = new RealizarCronograma();
+			teste.Cronograma(listaPalestras.OrderByDescending(x => x.Duracao).ToList());
+		}
+	}
 }
